@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RailRide - Book Your Train Journey</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            background-color: #0c3953;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline-block;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            padding: 6px 12px 6px 12px;
+        }
+
+        nav ul li a:hover{
+            background-color: rgb(46, 112, 160);
+        }
+
+        nav ul li a:active{
+            background-color: rgb(60, 168, 187);
+        }
+
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        #search {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 500px;
+            margin: 0 auto 20px auto;
+        }
+
+        #search h2 {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="date"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #0c3953;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        button:hover {
+            background-color: #072539;
+        }
+        #booking {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        #booking h2 {
+            margin-bottom: 20px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+
+            main {
+                padding: 10px;
+            }
+
+            #search, #booking {
+                max-width: 90%;
+            }
+        }
+        @media only screen and (max-width: 768px) {
+            nav ul li {
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            nav ul li a {
+                display: block;
+                padding: 10px;
+            }}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>RailRide - Book Your Train Journey</h1>
+        <nav>
+            <ul>
+                <li><a href="/index">Home</a></li>
+                <li><a href="/searchtrains">Search Trains</a></li>
+                <li><a href="/mybooking">My Bookings</a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/signup">Sign Up</a></li>
+                <li><a href="/service">Service</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="search">
+            <h2>Search Trains</h2>
+            <form id="searchForm">
+                <label for="source">Source:</label>
+                <input type="text" id="source" name="source"><br>
+                <label for="destination">Destination:</label>
+                <input type="text" id="destination" name="destination"><br>
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date"><br>
+                <button type="button" onclick="searchTrains()">Search</button>
+            </form>
+            <div id="searchResults"></div>
+        </section>
+
+       
+    </main>
+
+    <script>
+        function searchTrains() {
+            var source = document.getElementById("source").value;
+            var destination = document.getElementById("destination").value;
+            var date = document.getElementById("date").value;
+
+            var searchResults = [
+                { trainNumber: "12015", departure: "Delhi", arrival: "Dehradun", departureTime: "08:00 AM", arrivalTime: "02:00 PM" },
+                { trainNumber: "12016", departure: "Dehradun", arrival: "Delhi", departureTime: "09:00 AM", arrivalTime: "04:00 PM" }
+            ];
+
+            var searchResultsContainer = document.getElementById("searchResults");
+            searchResultsContainer.innerHTML = "<h2>Search Results</h2>";
+            if (searchResults.length > 0) {
+                var tableHtml = "<table><tr><th>Train Number</th><th>Departure</th><th>Arrival</th><th>Departure Time</th><th>Arrival Time</th></tr>";
+                searchResults.forEach(function(train) {
+                    tableHtml += "<tr><td>" + train.trainNumber + "</td><td>" + train.departure + "</td><td>" + train.arrival + "</td><td>" + train.departureTime + "</td><td>" + train.arrivalTime + "</td></tr>";
+                });
+                tableHtml += "</table>";
+                searchResultsContainer.innerHTML += tableHtml;
+            } else {
+                searchResultsContainer.innerHTML += "<p>No trains found for the given criteria.</p>";
+            }
+        }
+    </script>
+</body>
+</html>

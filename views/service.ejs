@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - RailRide</title>
+    <link rel="stylesheet" href="styles1.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            background-color: #0c3953;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            padding: 6px 12px;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        #services {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        #services h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #services ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #services ul li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #0c3953;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @media only screen and (max-width: 768px) {
+            nav ul li {
+                display: block;
+                margin: 10px auto;
+            }
+            nav ul li a {
+                display: block;
+                padding: 10px;
+            }
+            #services {
+                max-width: 90%;
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            nav ul li {
+                margin-right: 10px;
+            }
+            nav ul li a {
+                padding: 6px 10px;
+            }
+        }
+        header {
+            background-color: #0c3953;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline-block;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            padding: 6px 12px 6px 12px;
+        }
+
+        nav ul li a:hover{
+            background-color: rgb(46, 112, 160);
+        }
+
+        nav ul li a:active{
+            background-color: rgb(60, 168, 187);
+        }
+        @media only screen and (max-width: 768px) {
+            nav ul li {
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            nav ul li a {
+                display: block;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Our Services</h1>
+        <nav>
+            <ul>
+                <li><a href="/index">Home</a></li>
+                <li><a href="/searchtrains">Search Trains</a></li>
+                <li><a href="/mybooking">My Bookings</a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/signup">Sign Up</a></li>
+                <li><a href="/service">Service</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="services">
+            <h2>Services Offered</h2>
+            <ul>
+                <li>Online Train Booking</li>
+                <li>Seat Selection</li>
+                <li>PNR Status Check</li>
+                <li>Train Schedule Information</li>
+                <li>Travel Insurance</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>Contact us for more information.</p>
+    </footer>
+</body>
+</html>
